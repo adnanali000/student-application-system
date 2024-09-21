@@ -5,13 +5,13 @@ import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [userInput,setUserInput] = useState({email:'',password:''})
-  const [error,setError] = useState({email:'',password:''})
+  const [error,setError] = useState({})
   const [loading,setLoading] = useState(false)
   const dummyUser = {email:'test@gmail.com',password:'test123'}
   const navigate = useNavigate()
 
   const handleLogin = ()=>{
-    let updateError = { email: '', password: '' }; 
+    let updateError = {}; 
     if(EmptySpaceRegix.test(userInput.email)){
       updateError.email = 'Email is required'
     }
@@ -19,9 +19,9 @@ const Login = () => {
       updateError.password = 'Password is required'
     }
 
-    if (updateError.email || updateError.password) {
-      setError(updateError);
-      return; 
+    if(Object.keys(updateError)?.length > 0){
+      setError(updateError)
+      return
     }
     
     
@@ -67,10 +67,7 @@ const Login = () => {
 
   return (
     <AuthLayout>
-        <div className='text-center text-lg text-appDimGray font-medium'>
-          Welcome back! 👋
-        </div>
-          <FormHeader text="Login to your account" />       
+          <FormHeader message="Welcome back! 👋" heading="Login to your account" />       
           <CustomInput label="Email" name="email" type="email" onKeyDown={handleKeyDown} value={userInput.email} onChange={handleInputChange} error={error.email} placeholder="Enter your email" />
           <CustomInput label="Password" name="password" type="password" value={userInput.password} onKeyDown={handleKeyDown} onChange={handleInputChange} error={error.password} placeholder="Enter your password" />
           <CustomButton text='Login' loading={loading} handleClick={handleLogin} />

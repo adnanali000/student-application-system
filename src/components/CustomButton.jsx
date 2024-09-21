@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function CustomButton({text,className,handleClick=()=>{},loading}) {
   return (
-    <button type='button' onClick={handleClick} className={`bg-appRed w-full flex space-x-2  items-center justify-center transition mt-6 duration-300 hover:bg-appRedHover text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${className}`}>
+    <button type='button' onClick={handleClick} className={`bg-appRed w-full flex space-x-2  items-center justify-center transition mt-6 duration-300 hover:bg-appRedHover text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${loading ? 'pointer-events-none':''} ${className}`}>
        {loading && 
         <span>        
           <svg aria-hidden="true" className="w-5 h-5 text-red-500 animate-spin fill-white" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
