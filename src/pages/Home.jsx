@@ -6,7 +6,7 @@ import {DummyData} from '../utils/dummyValues'
 export default function Home() {
   const [data,setData] = useState(DummyData())
   const [filteredData,setFilteredData] = useState(data)
-  const [view,setView] = useState("table")
+  const [view,setView] = useState("card")
   const [sortBy,setSortBy] = useState("")
   const [currentPage,setCurrentPage] = useState(1)
   const [itemsPerPage,setItemsPerPage] = useState(10);
@@ -95,12 +95,19 @@ export default function Home() {
         <div className='my-6'>
           <SortSection view={view} sortBy={sortBy} handleView={handleView} handlePage={handleItemPerPage} handleSort = {handleSort} />
         </div>
-        <div>
-          {view == 'table' ? <TableView data={currentData} /> : <CardView />}
+        {currentData?.length > 0 ?
+          <div>
+          {view == 'card' ? <CardView data={currentData} /> : <TableView data={currentData} />}
         </div>
+        :
+        <div className='text-xl text-center text-appDarkGray'>  
+          No data found
+        </div>  
+      }
+       {currentData?.length > 0 && 
         <div>
           <Pagination currentPage={currentPage} totalPages={totalPages} perPage={itemsPerPage} onPageChange={handlePageChange} />
-        </div>
+        </div>}
       </div>
     </div>
   )

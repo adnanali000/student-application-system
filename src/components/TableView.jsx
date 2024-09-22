@@ -5,7 +5,7 @@ export default function TableView({ data }) {
         if(col == 'duration'){
             return `${val} Year(s)`
         }else if(col == 'cost'){
-            return `$ ${val}`
+            return `$${val}`
         }
         else{
             return val
@@ -32,7 +32,7 @@ export default function TableView({ data }) {
                             <tr key={index} className={`${index % 2 == 0 ?'bg-white':'bg-gray-50'} hover:bg-gray-100`}>
                             <td className='px-6 py-4'>{index + 1}</td>                               
                             {Columns.map((col,i)=>(
-                                <td key={i} className="px-6 py-4">
+                                <td key={i} className="px-6 py-4 whitespace-nowrap">
                                     {getValues(col.name,item[col.name])}
                                 </td>
                             )) 

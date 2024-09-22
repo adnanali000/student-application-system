@@ -35,14 +35,14 @@ export const ItemsPage = [
 ]
 
 export const Durations = [
-    { label: 1, value: 1 },
-    { label: 2, value: 2 },
-    { label: 3, value: 3 },
-    { label: 4, value: 4},
-    { label: 5, value: 5 },
-    { label: 6, value: 6 },
-    { label: 7, value: 7 },
-    { label: 8, value: 8 },
+    { label: "1 Year(s)", value: 1 },
+    { label: "2 Year(s)", value: 2 },
+    { label: "3 Year(s)", value: 3 },
+    { label: "4 Year(s)", value: 4},
+    { label: "5 Year(s)", value: 5 },
+    { label: "6 Year(s)", value: 6 },
+    { label: "7 Year(s)", value: 7 },
+    { label: "8 Year(s)", value: 8 },
 ]
 
 export const Columns = [
