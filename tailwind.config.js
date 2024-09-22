@@ -9,7 +9,6 @@ module.exports = {
       colors:{
         appRed : '#C8102E',
         appRedHover : '#b70c26',
-        appGreen: '#41901c',
         appDarkGray: '#323232',
         appLightGray: '#DEDEDE',
         appDimGray: '#7f7f7f',

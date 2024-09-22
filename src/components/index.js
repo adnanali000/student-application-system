@@ -6,6 +6,9 @@ import FormHeader from "./FormHeader";
 import Navbar from "./Navbar";
 import Filters from "./Filters";
 import SortSection from "./SortSection";
+import TableView from "./TableView";
+import CardView from "./CardView";
+import Pagination from "./Pagination";
 
 export {
     CustomButton,
@@ -15,5 +18,8 @@ export {
     FormHeader,
     Navbar,
     Filters,
-    SortSection
+    SortSection,
+    TableView,
+    CardView,
+    Pagination
 }
