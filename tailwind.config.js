@@ -13,7 +13,10 @@ module.exports = {
         appLightGray: '#DEDEDE',
         appDimGray: '#7f7f7f',
 
-      }
+      },
+      screens: {
+        'xs': { 'max': '380px' },
+      },
     },
   },
   plugins: [

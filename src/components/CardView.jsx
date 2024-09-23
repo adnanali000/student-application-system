@@ -23,7 +23,7 @@ export default function CardView({ data }) {
           </div>
           <div className='p-4'>
           <h3 className="text-xl font-semibold text-gray-800 mb-2">{item.name}</h3>
-          <div className='flex items-center justify-between'>
+          <div className='flex items-center justify-between xs:text-xs'>
           <p className="text-gray-600 mb-1">
             <span className="font-medium">University:</span> {item.university}
           </p>
@@ -31,7 +31,7 @@ export default function CardView({ data }) {
             <span className="font-medium">Country:</span> {item.country}
           </p>
           </div>
-          <div className='flex items-center justify-between'>
+          <div className='flex items-center justify-between xs:text-xs'>
           <p className="text-gray-600 mb-1">
             <span className="font-medium">Duration:</span> {item.duration} Year(s)
           </p>
@@ -39,7 +39,7 @@ export default function CardView({ data }) {
             <span className="font-medium">Cost:</span> ${item.cost}
           </p>
           </div>
-          <div className='flex items-center justify-between'>
+          <div className='flex items-center justify-between xs:text-xs'>
           <p className="text-gray-600 mb-1">
             <span className="font-medium">Language:</span> {item.language}
           </p>
