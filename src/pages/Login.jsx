@@ -2,10 +2,14 @@ import React,{useState} from 'react'
 import {CustomInput,CustomButton,AuthLayout,Linking,FormHeader} from '../components'
 import { EmptySpaceRegix } from '../utils/regix';
 import { useNavigate } from 'react-router-dom';
+import EmailIcon from '../assets/email.svg'
+import closeEyeIcon from '../assets/closeEye.svg'
+import openEyeIcon from '../assets/openEye.svg'
 
 const Login = () => {
   const [userInput,setUserInput] = useState({email:'',password:''})
   const [error,setError] = useState({})
+  const [showPassword,setShowPassword] = useState(false)
   const [loading,setLoading] = useState(false)
   const dummyUser = {email:'test@gmail.com',password:'test123'}
   const navigate = useNavigate()
@@ -64,12 +68,16 @@ const Login = () => {
     navigate('/register')
   }
 
+  const togglePassword = ()=>{
+    setShowPassword(prev => !prev)
+  }
+
 
   return (
     <AuthLayout>
           <FormHeader message="Welcome back! 👋" heading="Login to your account" />       
-          <CustomInput label="Email" name="email" type="email" onKeyDown={handleKeyDown} value={userInput.email} onChange={handleInputChange} error={error.email} placeholder="Enter your email" />
-          <CustomInput label="Password" name="password" type="password" value={userInput.password} onKeyDown={handleKeyDown} onChange={handleInputChange} error={error.password} placeholder="Enter your password" />
+          <CustomInput label="Email" name="email" icon={EmailIcon}  type="email" onKeyDown={handleKeyDown} value={userInput.email} onChange={handleInputChange} error={error.email} placeholder="Enter your email" />
+          <CustomInput label="Password" name="password" handleIconClick={togglePassword} icon={showPassword ? openEyeIcon : closeEyeIcon} type={showPassword?"text":"password"} value={userInput.password} onKeyDown={handleKeyDown} onChange={handleInputChange} error={error.password} placeholder="Enter your password" />
           <CustomButton text='Login' loading={loading} handleClick={handleLogin} />
           <Linking label="Don't have an account?" link="Register" handleLink={handleLink} />
     </AuthLayout>
