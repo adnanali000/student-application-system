@@ -1,7 +1,8 @@
-# Deploy URL 
+# Live Demo 
+You can access the live version of the application here: https://studentlink.netlify.app
 
-https://studentlink.netlify.app
 
+## Follow below steps to run application locally.
 
 ## Step 1
 
